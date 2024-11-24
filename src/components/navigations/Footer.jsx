@@ -64,7 +64,6 @@ function Footer() {
                   key={item.name}
                   href={item.href}
                   target="_blank"
-                  rel="noopener noreferrer"
                   className="text-gray-400 hover:text-lime-nav transition duration-200  "
                 >
                   <span className="sr-only">{item.name}</span>
