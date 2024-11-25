@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
+import bgaboutus2 from "../../assets/img/bgaboutus2.png";
 
 function HeaderContact() {
   const form = useRef();
@@ -49,12 +50,12 @@ function HeaderContact() {
   return (
     <div className="relative min-h-screen flex items-center justify-center p-6">
       {/* Imagen de fondo con opacidad */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('../../src/assets/img/bgaboutus.png')",
-        }}
-      >
+      <div className="absolute inset-0 z-0">
+        <img
+          src={bgaboutus2}
+          alt="Background"
+          className="w-full h-full object-cover"
+        />
         {/* Capa con opacidad sobre la imagen */}
         <div className="absolute inset-0 bg-black opacity-70"></div>
       </div>

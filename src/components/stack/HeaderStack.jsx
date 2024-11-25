@@ -8,20 +8,14 @@ import python from "../../assets/img/python.svg";
 import django from "../../assets/img/django.svg";
 import mysql from "../../assets/img/mysql.svg";
 import postre from "../../assets/img/postgre.svg";
-import bgaboutus from "../../assets/img/bgaboutus.png";
+import bgaboutus3 from "../../assets/img/bgaboutus3.png";
 
 export default function HeaderStack() {
   return (
     <div className="bg-olive-green py-24 sm:py-32">
-      <div className="absolute inset-0">
-        <div
-          className="h-1/3 sm:h-2/3 opacity-30"
-          style={{
-            backgroundImage: "url('../../src/assets/img/bgaboutus.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
+      <div className="absolute inset-0 opacity-20">
+        <img src={bgaboutus3} alt="" />
+        <div />
       </div>
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
         <p className="mx-auto max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-gray-100 sm:text-5xl">

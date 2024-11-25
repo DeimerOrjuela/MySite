@@ -1,5 +1,5 @@
 import logo from "../../assets/img/logo.png";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   FaGithub,
   FaLinkedin,
@@ -10,18 +10,8 @@ import {
 const navigation = {
   sobremi: [{ name: "About", href: "/AboutUS" }],
   contacto: [{ name: "Contacto", href: "/Contact" }],
-  stack: [
-    { name: "Frontend", href: "/Stack" },
-    { name: "Backend", href: "/Stack" },
-    { name: "SGDB", href: "/Stack" },
-    { name: "Versionamiento", href: "/Stack" },
-    { name: "Scrum", href: "/Stack" },
-  ],
-  proyectos: [
-    { name: "Landing Page", href: "/Projects" },
-    { name: "Blog", href: "/Projects" },
-    { name: "APIs", href: "/Projects" },
-  ],
+  stack: [{ name: "Todas mis tecnologias", href: "/Stack" }],
+  proyectos: [{ name: "Mis proyectos", href: "/Projects" }],
   social: [
     {
       name: "Github",
@@ -47,6 +37,13 @@ const navigation = {
 };
 
 function Footer() {
+  const navigate = useNavigate();
+
+  // Manejar clic en los enlaces
+  const handleClick = (path) => {
+    navigate(path, { replace: true, state: { reload: new Date().getTime() } });
+  };
+
   return (
     <footer className="bg-olive-green black" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
@@ -55,19 +52,20 @@ function Footer() {
       <div className="mx-auto max-w-full py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 xl:col-span-1">
-            <NavLink to="/">
+            <button onClick={() => handleClick("/")}>
               <img src={logo} width={60} height={60} className="" />
-            </NavLink>
+            </button>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
                   target="_blank"
-                  className="text-gray-400 hover:text-lime-nav transition duration-200  "
+                  className="text-gray-400 hover:text-lime-nav transition duration-200"
+                  rel="noopener noreferrer"
                 >
                   <span className="sr-only">{item.name}</span>
-                  <item.icon className="h-6 w-6 " aria-hidden="true" />
+                  <item.icon className="h-6 w-6" aria-hidden="true" />
                 </a>
               ))}
             </div>
@@ -81,12 +79,12 @@ function Footer() {
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.sobremi.map((item) => (
                     <li key={item.name}>
-                      <a
-                        href={item.href}
+                      <button
+                        onClick={() => handleClick(item.href)}
                         className="text-base text-gray-500 hover:text-gray-300"
                       >
                         {item.name}
-                      </a>
+                      </button>
                     </li>
                   ))}
                 </ul>
@@ -98,12 +96,12 @@ function Footer() {
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.contacto.map((item) => (
                     <li key={item.name}>
-                      <a
-                        href={item.href}
+                      <button
+                        onClick={() => handleClick(item.href)}
                         className="text-base text-gray-500 hover:text-gray-300"
                       >
                         {item.name}
-                      </a>
+                      </button>
                     </li>
                   ))}
                 </ul>
@@ -115,12 +113,12 @@ function Footer() {
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.stack.map((item) => (
                     <li key={item.name}>
-                      <a
-                        href={item.href}
+                      <button
+                        onClick={() => handleClick(item.href)}
                         className="text-base text-gray-500 hover:text-gray-300"
                       >
                         {item.name}
-                      </a>
+                      </button>
                     </li>
                   ))}
                 </ul>
@@ -132,12 +130,12 @@ function Footer() {
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.proyectos.map((item) => (
                     <li key={item.name}>
-                      <a
-                        href={item.href}
+                      <button
+                        onClick={() => handleClick(item.href)}
                         className="text-base text-gray-500 hover:text-gray-300"
                       >
                         {item.name}
-                      </a>
+                      </button>
                     </li>
                   ))}
                 </ul>
@@ -154,7 +152,5 @@ function Footer() {
     </footer>
   );
 }
-
-const mapStateToProps = (state) => ({});
 
 export default Footer;
