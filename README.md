@@ -1,6 +1,6 @@
 # React + Vite
 
-Este proyecto esta basado en la utilizacion de React + vite, tailwind para la estilizacion, emailJS para la recepcion de emails y Tailwind CSS para darle estilos
+Este proyecto esta basado en la utilizacion de React + vite, emailJS para la recepcion de emails y Tailwind CSS para darle estilos. Busco mostrar con este mis capacidades como desarrollador.
 
 Currently, two official plugins are available:
 
