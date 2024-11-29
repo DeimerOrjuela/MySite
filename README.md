@@ -1,6 +1,6 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto esta basado en la utilizacion de React + vite, tailwind para la estilizacion, emailJS para la recepcion de emails y Tailwind CSS para darle estilos
 
 Currently, two official plugins are available:
 
